@@ -1,5 +1,29 @@
 [
-  { "id": 1, "name": "Laptop", "description": "High-performance laptop", "price": 999 },
-  { "id": 2, "name": "Phone", "description": "Latest smartphone", "price": 699 },
-  { "id": 3, "name": "Headphones", "description": "Noise-canceling headphones", "price": 199 }
+  {
+    "id": 1,
+    "name": "ProBook Laptop",
+    "description": "High-performance laptop with 16GB RAM and 512GB SSD.",
+    "price": 999,
+    "category": "Electronics",
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+  },
+  {
+    "id": 2,
+    "name": "SmartPhone X",
+    "description": "Latest 5G smartphone with OLED display.",
+    "price": 699,
+    "category": "Electronics",
+    "rating": 4.2,
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 3,
+    "name": "Noise-Canceling Headphones",
+    "description": "Wireless headphones with 30-hour battery life.",
+    "price": 199,
+    "category": "Accessories",
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1496957961599-e35b69ef5d7c?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
 ]

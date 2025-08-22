@@ -14,6 +14,8 @@ export async function POST(request) {
   const data = JSON.parse(readFileSync(filePath, 'utf-8'));
   const newProduct = await request.json();
   newProduct.id = data.length + 1;
+  newProduct.price = parseFloat(newProduct.price);
+  newProduct.rating = parseFloat(newProduct.rating);
   data.push(newProduct);
   writeFileSync(filePath, JSON.stringify(data, null, 2));
   return new Response(JSON.stringify(newProduct), {
