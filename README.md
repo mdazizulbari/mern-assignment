@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MERN Assignment
 
-## Getting Started
+A simple Next.js 15 application with authentication and product management features, built as part of the Programming Hero MERN Stack Development Bootcamp.
 
-First, run the development server:
+## Project Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This app includes a landing page, a public product list, product details pages, and a protected page for adding products. Authentication is handled via NextAuth.js with Google login. Data is stored in a mock JSON file, and the app uses Tailwind CSS for styling.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup & Installation Instructions
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/mdazizulbari/mern-assignment.git
+   cd mern-assignment
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Set Up Environment Variables**:
+   Create a `.env.local` file in the root directory and add:
+   ```
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your-secret-key
+   GOOGLE_CLIENT_ID=your-google-client-id
+   GOOGLE_CLIENT_SECRET=your-google-client-secret
+   ```
+   - Generate a secret key using `openssl rand -base64 32`.
+   - Obtain Google Client ID and Secret from https://console.cloud.google.com/.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Route Summary
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **/**: Landing page with Navbar, Hero, Product Highlights, and Footer.
+- **/login**: Login page with Google authentication.
+- **/products**: Public page listing all products.
+- **/products/[id]**: Public page showing details of a single product.
+- **/dashboard/add-product**: Protected page for adding new products (requires login).
 
-## Deploy on Vercel
+## Live Site
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Live Demo](https://mern-assignment.vercel.app)
