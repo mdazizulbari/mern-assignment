@@ -1,6 +1,7 @@
 export const metadata = {
-  title: 'MERN Assignment',
-  description: 'A simple Next.js app with authentication and product management',
+  title: "MERN Assignment",
+  description:
+    "A simple Next.js app with authentication and product management",
 };
 
 export default function RootLayout({ children }) {
