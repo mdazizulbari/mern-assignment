@@ -31,8 +31,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} bg-gray-50`}>
         <div className="min-h-screen flex flex-col">
-          <Toaster position="top-right" />
-          {children}
+          <Toaster position="top-right">{children}</Toaster>
           <footer className="bg-gray-800 text-white py-6 text-center">
             <div className="max-w-5xl mx-auto">
               <p className="text-sm">
