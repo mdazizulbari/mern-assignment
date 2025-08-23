@@ -1,4 +1,5 @@
 import { Inter, Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} bg-gray-50`}>
         <div className="min-h-screen flex flex-col">
+          <Toaster position="top-right" />
           {children}
           <footer className="bg-gray-800 text-white py-6 text-center">
             <div className="max-w-5xl mx-auto">

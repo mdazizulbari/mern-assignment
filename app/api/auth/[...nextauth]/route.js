@@ -10,7 +10,7 @@ export const authOptions = {
   ],
   callbacks: {
     async redirect({ url, baseUrl }) {
-      return baseUrl + "/products";
+    return baseUrl + "/products?login=success";
     },
   },
 };

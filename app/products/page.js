@@ -1,9 +1,23 @@
+"use client"; // ✅ make it client-side so we can use hooks
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
-import products from "../../public/data/products.json"; // ✅ direct import
+import products from "../../public/data/products.json"; 
+import { useSearchParams } from "next/navigation"; // ✅
+import { useEffect } from "react"; 
+import toast from "react-hot-toast"; // ✅
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("login") === "success") {
+      toast.success("✅ Login Successful!");
+      // ✅ remove the query param from URL after showing toast
+      window.history.replaceState({}, document.title, "/products");
+    }
+  }, [searchParams]);
+
   return (
     <div>
       <Navbar />
