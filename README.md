@@ -46,4 +46,4 @@ This app includes a landing page, a public product list, product details pages, 
 
 ## Live Site
 
-[Live Demo](https://mern-assignment.vercel.app)
+[Live Demo](https://mern-assignment-six.vercel.app/)
