@@ -9,7 +9,7 @@ export default function Home() {
         className="bg-blue-500 text-white py-20 text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c)",
+            "url(https://images.unsplash.com/photo-1729327741524-0e92aecdeb3e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
         }}
       >
         <div className="max-w-5xl mx-auto">
