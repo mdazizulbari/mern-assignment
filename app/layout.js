@@ -1,3 +1,9 @@
+import { Inter, Poppins } from "next/font/google";
+import Script from "next/script";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["600", "700"] });
+
 export const metadata = {
   title: "MERN Store",
   description:
@@ -8,11 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
-          rel="stylesheet"
+        {/* Load Tailwind via CDN (async, beforeInteractive) */}
+        <Script
+          src="https://cdn.tailwindcss.com"
+          strategy="beforeInteractive"
         />
-        <script src="https://cdn.tailwindcss.com"></script>
         <style>{`
           body {
             font-family: 'Inter', sans-serif;
@@ -22,7 +28,7 @@ export default function RootLayout({ children }) {
           }
         `}</style>
       </head>
-      <body className="bg-gray-50">
+      <body className={`${inter.className} bg-gray-50`}>
         <div className="min-h-screen flex flex-col">
           {children}
           <footer className="bg-gray-800 text-white py-6 text-center">
