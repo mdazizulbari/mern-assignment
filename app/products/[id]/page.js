@@ -57,9 +57,9 @@ export default async function ProductDetails({ params }) {
               <p className="text-sm text-yellow-500 mb-4">
                 {"★".repeat(Math.round(product.rating))} ({product.rating})
               </p>
-              <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition transform hover:scale-105">
+              {/* <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition transform hover:scale-105">
                 Add to Cart
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
