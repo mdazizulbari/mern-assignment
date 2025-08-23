@@ -1,17 +1,9 @@
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
-import Image from "next/image"; // ✅ import Image
+import Image from "next/image";
+import products from "../../public/data/products.json"; // ✅ direct import
 
-async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store",
-  });
-  return res.json();
-}
-
-export default async function Products() {
-  const products = await getProducts();
-
+export default function ProductsPage() {
   return (
     <div>
       <Navbar />
@@ -23,12 +15,12 @@ export default async function Products() {
               key={product.id}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105"
             >
-              {/* ✅ Replaced <img> with Next.js <Image /> */}
+              {/* ✅ Using Next.js Image */}
               <Image
                 src={product.image}
                 alt={product.name}
-                width={400}   // must define width
-                height={300}  // must define height
+                width={400}
+                height={300}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <h2 className="text-xl font-semibold">{product.name}</h2>

@@ -1,12 +1,17 @@
 import Navbar from "../../../components/Navbar";
-import Image from "next/image"; // ✅ import Image
+import Image from "next/image";
 
+// ✅ Fetch all products from public/data/products.json
 async function getProduct(id) {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, { cache: "no-store" });
-  if (!res.ok) {
-    return null;
-  }
-  return res.json();
+  // Use absolute URL for server-side fetch
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/data/products.json`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) return null;
+
+  const products = await res.json();
+  return products.find((p) => String(p.id) === String(id)) || null;
 }
 
 export default async function ProductDetails({ params }) {
@@ -29,7 +34,7 @@ export default async function ProductDetails({ params }) {
       <div className="max-w-5xl mx-auto py-12">
         <div className="bg-white p-8 rounded-xl shadow-lg">
           <div className="flex gap-8">
-            {/* ✅ Fixed: Next.js Image */}
+            {/* ✅ Next.js Image */}
             <div className="w-1/2 h-96 relative">
               <Image
                 src={product.image}
@@ -43,8 +48,12 @@ export default async function ProductDetails({ params }) {
             <div className="w-1/2">
               <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
               <p className="text-gray-600 mb-4">{product.description}</p>
-              <p className="font-bold text-2xl text-gray-800 mb-2">${product.price}</p>
-              <p className="text-sm text-gray-500 mb-2">Category: {product.category}</p>
+              <p className="font-bold text-2xl text-gray-800 mb-2">
+                ${product.price}
+              </p>
+              <p className="text-sm text-gray-500 mb-2">
+                Category: {product.category}
+              </p>
               <p className="text-sm text-yellow-500 mb-4">
                 {"★".repeat(Math.round(product.rating))} ({product.rating})
               </p>
